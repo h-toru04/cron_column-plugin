@@ -52,7 +52,6 @@ public class CronViewColumn extends ListViewColumn {
 
     private String getTriggersString(Map<TriggerDescriptor, Trigger<?>> triggers, boolean hasSourceCodeManagement) {
         StringBuilder expression = new StringBuilder();
-        int counter = 100;
         for (Trigger trigger : triggers.values()) {
             if (trigger == null) continue;
 
@@ -69,7 +68,6 @@ public class CronViewColumn extends ListViewColumn {
 
             // Add trigger name and cron expression.
             expression.append(cronExpression.replaceAll("\n", "<br />"));
-            counter++;
         }
         return expression.toString();
     }
